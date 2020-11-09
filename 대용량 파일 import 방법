@@ -1,0 +1,41 @@
+The reason why I preprocessed raw data set was that I didn't know hot to import big data set into MySQl.
+Finally I found out the way through googleing.
+
+It was not that easy for me.
+
+First, We need to check the directory that MySQL system allows.
+
+SHOW VARIABLES LIKE 'secure_file%'; <-- type this in MySQL.
+
+then we can see the directory.
+
+like this 
+-> C:\ProgramData\MySQL\MySQL Server 8.0\
+
+And then, move the big data set into that directory.
+Ok, First way is done.
+
+Second, We need to make the table that fits big data, careful with types of big data.
+
+like this
+-> create table Test(
+Id int primary key,
+Name text,
+Year int,
+Gender text,
+Count int);
+
+and type this query in MySQL to import
+
+-> load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Test.csv' into table Test
+
+fields terminated by ','
+
+ignore 1 rows;
+
+' Test ' is the big file which I wanted to import into MySQL.
+
+with this way finally we can import big data into MySQL.
+
+
+
