@@ -16,3 +16,4 @@ Count int);
 -> load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Test.csv' into table Test
 fields terminated by ','
 ignore 1 rows;
+.
