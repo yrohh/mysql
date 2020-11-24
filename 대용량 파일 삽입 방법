@@ -1,0 +1,18 @@
+1. 아래 쿼리문을 실행하여 MySQL에서 허용하는 디렉토리 확인.
+SHOW VARIABLES LIKE 'secure_file%';
+
+2. 다음과 같이 출력, 해당 디렉토리에 옮기려는 파일 이동.
+-> C:\ProgramData\MySQL\MySQL Server 8.0\
+
+3. 데이터셋에 알맞은 테이블 생성.
+-> create table Test(
+Id int primary key,
+Name text,
+Year int,
+Gender text,
+Count int);
+
+4. 아래 쿼리문을 실행하여 데이터셋 삽입.
+-> load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Test.csv' into table Test
+fields terminated by ','
+ignore 1 rows;
